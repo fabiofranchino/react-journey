@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import Mock1 from './components/mock1/index.js'
+import Mock2 from './components/mock2/index.js'
+import Mock3 from './components/mock3/index.js'
 
-function App() {
+function App () {
+  const [mock, setMock] = useState('0')
+  const mocks = [<Mock1 />, <Mock2 />, <Mock3 />]
+
+  const handleChange = (e) => {
+    setMock(e.target.value)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <select value={mock} onChange={handleChange}>
+        <option value='0'>Mock1</option>
+        <option value='1'>Mock2</option>
+        <option value='2'>Mock3</option>
+      </select>
+      {mocks[mock]}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
