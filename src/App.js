@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
 import './App.css'
-import Mock1 from './components/mock1/index.js'
-import Mock2 from './components/mock2/index.js'
-import Mock3 from './components/mock3/index.js'
+import Mock1 from './components/mock1/'
+import Mock2 from './components/mock2/'
+import Mock3 from './components/mock3/'
+import Mock4 from './components/mock4/'
+import Mock5 from './components/mock5/'
 
 function App () {
-  const [mock, setMock] = useState('0')
-  const mocks = [<Mock1 />, <Mock2 />, <Mock3 />]
+  const [mock, setMock] = useState('4')
+  const mocks = [
+    <Mock1 />,
+    <Mock2 />,
+    <Mock3 />,
+    <Mock4 />,
+    <Mock5 />
+  ]
 
   const handleChange = (e) => {
     setMock(e.target.value)
@@ -15,9 +23,12 @@ function App () {
   return (
     <div className='app'>
       <select value={mock} onChange={handleChange}>
-        <option value='0'>Mock1</option>
-        <option value='1'>Mock2</option>
-        <option value='2'>Mock3</option>
+        {
+          mocks.map((d, i) => (
+            <option key={i.toString()} value={i}>{d.toString()}</option>
+          ))
+        }
+
       </select>
       {mocks[mock]}
     </div>

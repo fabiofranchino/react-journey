@@ -9,13 +9,18 @@ function Mock (props) {
   }
 
   useEffect(() => {
-    console.log('mounted')
+    console.log('func mounted')
     console.log(ref)
+
+    return () => {
+      console.log('func unmounted')
+    }
   }, [])
 
   return (
     <div className='frame'>
       <h1 ref={ref}>Functional Component {counter}</h1>
+      <p>With its internal state and component cycle events</p>
       <button onClick={handleClickMe}>Click Me</button>
     </div>
   )

@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "TOP TOP"
+    "LEFT RIGHT";
+}
+
+.top {
+  grid-area: TOP;
+  background-color: antiquewhite;
+}
+
+.left {
+  grid-area: LEFT;
+  background-color: azure;
+}
+
+.right {
+  grid-area: RIGHT;
+  background-color: beige;
+}
+
+.grid > *{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.grid h1, .grid p{
+  margin: 0;
+}
