@@ -1,0 +1,16 @@
+h1{
+    color:red;
+}
+
+h1, p{
+    margin: 0;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
