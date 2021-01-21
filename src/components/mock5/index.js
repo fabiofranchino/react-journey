@@ -7,8 +7,8 @@ function Mock (props) {
   const cref = useRef()
 
   const handleClick = e => {
-    fref.current.setFromOutside('HELLO!!!')
-    cref.current.setFromOutside('HELLO!!!')
+    fref.current.setFromOutside('HELLO from Parent')
+    cref.current.setFromOutside('HELLO from Parent')
   }
   return (
     <div className='frame'>
