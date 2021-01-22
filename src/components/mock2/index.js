@@ -10,16 +10,16 @@ class Mock extends React.Component {
   }
 
   componentDidMount () {
-    console.log('componentDidMount')
+    console.log('mount')
     console.log(this.ref)
   }
 
   componentWillUnmount () {
-    console.log('componentWillUnmount')
+    console.log('unmount')
   }
 
   componentDidUpdate () {
-    console.log('componentDidUpdate')
+    console.log('update')
   }
 
   handleClickMe () {

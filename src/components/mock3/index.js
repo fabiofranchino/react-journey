@@ -3,19 +3,26 @@ import { useState, useEffect, useRef } from 'react'
 function Mock (props) {
   const [counter, setCounter] = useState(0)
   const ref = useRef()
+  const mounted = useRef(false)
 
   const handleClickMe = () => {
-    setCounter(counter + 1)
+    setCounter((counter) => counter + 1)
   }
 
   useEffect(() => {
-    console.log('func mounted')
-    console.log(ref)
-
-    return () => {
-      console.log('func unmounted')
+    if (!mounted.current) {
+      console.log('mount')
+      console.log(ref)
+      mounted.current = true
+    } else {
+      console.log('update')
     }
-  }, [])
+
+    // unmount is triggered on each update!
+    return () => {
+      console.log('unmount')
+    }
+  }, [counter])
 
   return (
     <div className='frame'>

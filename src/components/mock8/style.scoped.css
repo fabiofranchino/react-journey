@@ -1,0 +1,36 @@
+.menuwrapper{
+    padding: 3rem;
+}
+
+.menubar{
+    width: 100%;
+    background-color: #eee;
+    font-family: sans-serif;
+}
+
+.menubar ul{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menubar li{
+    margin: 0;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
+}
+.menubar li:last-child{
+    border: none;
+}
+
+.menubar li:hover{
+    background-color: #ddd;
+}
+
+.menubar li.active{
+    background-color: black;
+    color: white;
+}
